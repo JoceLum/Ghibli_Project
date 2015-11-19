@@ -1,0 +1,415 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+ .clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+ }
+
+ * {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
+ *, *:before, *:after {
+     box-sizing: border-box;
+} 
+
+body {
+     font-family: 'Roboto Condensed', sans-serif;
+     font-size: 12px;
+     color: #666666;
+     background-image: url(images/grey.png);
+}
+
+@-webkit-keyframes sprite {
+    0% {
+        top :0;
+    }
+    20%, 40%, 60%, 80% {
+        margin-right: 0;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        margin-right: 20px;
+    }
+    100% {
+        top:100%;
+    }
+}
+
+.sprite1 {
+     position: absolute;
+     right: 0;
+     -webkit-animation: sprite 5s linear infinite;
+}
+
+.sprite2 {
+     position: absolute;
+     right: 0;
+     -webkit-animation: sprite 10s linear infinite;
+}
+
+.sprite3 {
+     position: absolute;
+     right: 0;
+     -webkit-animation: sprite 15s linear infinite;
+}
+.sprite4 {
+     position: absolute;
+     right: 0;
+     -webkit-animation: sprite 20s linear infinite;
+ }
+ .sprite5 {
+     position: absolute;
+     right: 0;
+     -webkit-animation: sprite 25s linear infinite;
+ }
+
+h1 {
+     font-family: 'Cabin Sketch', cursive;
+     color: #A36CBD;
+     font-size: 3.5em;
+}
+
+p {
+     font-size: 1.3em;
+}
+
+input,
+textarea {
+     font-size: 1.3em;
+}
+
+.navbar {
+     position: fixed;
+     margin: 0;
+     float: left;
+}
+
+.navbar li {
+     list-style-type: none; 
+     padding: 10px;
+}
+
+.navbar li a {
+     color: #666666;
+     font-size: 20px;
+     text-decoration: none;
+}
+
+.navbar li.first {
+     animation-delay: 0.5s;
+}
+
+.navbar li.second {
+     animation-delay: 1s;
+}
+
+.navbar li.third {
+     animation-delay: 1.5s;
+}
+
+.navbar li.forth {
+     animation-delay: 2s;
+}
+
+.navbar li > a {
+     position relative;
+     text-decoration: none;
+}
+
+.navbar li > a:before {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: #A36CBD;
+     opacity: 0.5;
+     visibility: hidden;
+     transform: scaleX(0);
+     transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar li > a:hover:before {
+     visibility: visible;
+     transform: scaleX(1);
+}
+
+.banner {
+     position: relative;
+     margin: 155px auto;
+     max-width: 1000px;
+     border: 2px solid black;
+     background-image: url(https://33.media.tumblr.com/8bd8266cfe8f66eadf64bea5ab4d83d0/tumblr_nmgzzu7nAx1rst0g3o1_500.gif);
+     background-size: cover;
+     background-position: left bottom;
+}
+
+.banner img {
+     width: 50%;
+}
+
+.about {
+     max-width: 1000px;
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+}
+
+.about1, .about2 {
+     text-align: center;
+     width: 450px;
+     height: 400px;
+     cursor: pointer;
+     position: relative;
+     perspective: 2000px;
+}
+
+.about1 p,
+.about2 p {
+     text-align: left
+}
+
+.front, .back {
+     position: absolute;
+     width: 100%;
+     transition: all 2s;
+     backface-visibility: hidden;
+}
+
+.front {
+     transform: rotateY(0);
+}
+
+.front h1 {
+     margin-bottom: 10px;
+}
+
+.back {
+     transform: rotateY(180deg);
+}
+
+.about1:hover .back,
+.about2:hover .back {
+     transform: rotateY(0);
+}
+
+.about1:hover .front,
+.about2:hover .front {
+     transform: rotateY(-180deg);
+}
+
+.films {
+     text-align: center;
+}
+
+.films-flex {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     align-contents: centre;
+}
+
+.movie-flex {
+     display: flex;
+     flex-direction: column;
+
+     position: relative;
+}
+
+.movie-flex img {
+     width: 300px;
+     margin: 10px;
+     transition: all 1s;
+}
+
+.movie-flex p {
+     line-height: 2px;
+}
+
+.movie-flex i {
+    position: absolute;
+    display: none;
+    color: white;
+    z-index: 99;
+     top: 160px;
+     left: 130px;
+}
+
+.movie-flex:hover img {
+     opacity: 0.7;
+}
+
+.movie-flex:hover i {
+     display: block;
+}
+
+/*GALLERY styling*/
+.gallery {
+     margin-top: 80px;
+}
+
+.cell {
+     opacity: 0.7;
+}
+
+.cell.is-selected {
+     opacity: 1;
+}
+
+.flickity-prev-next-button {
+     top: 375px;
+    width: 100px;
+    height: 70px;
+    background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+
+.flickity-prev-next-button:hover .arrow {
+  fill: #A36CBD;
+}
+
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: #666666;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+.flickity-prev-next-button.next {
+    right: -33px;
+}
+
+.flickity-prev-next-button.previous {
+    left: 6px;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
+
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid #666666;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: #666666;
+}
+
+.museum {
+     max-width: 1000px;
+     margin: 100px auto;
+     text-align: center;
+}
+
+.museum h1 {
+     margin-bottom: 5px;
+}
+
+.info-flex {
+     display: flex;
+     flex-wrap: wrap;
+}
+
+.info-flex p {
+     margin: 10px 50px;
+     text-align: left;
+}
+
+.tickets p {
+     font-weight: bold;
+}
+
+.tickets i.fa {
+     padding: 10px;
+     color: #F09292;
+}
+
+.tickets table, th, td {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.tickets table {
+     margin: 20px auto;
+}
+
+.tickets th, td {
+    padding: 5px;
+    text-align: center;
+}
+
+.tickets input,
+.contact-flex input,
+.contact-flex textarea {
+     border: 1px solid #666666;
+     border-radius: 5px;
+     padding: 8px;
+     color: #666666;
+     background-color: transparent;
+     transition: all 0.5s;
+}
+
+.tickets input.submit:hover,
+.contact-flex input.submit:hover {
+     background-color: #BC85D6;
+     border: 1px solid #666666;
+     color: white;
+}
+
+.contact-flex {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.contact-flex input {
+     margin: 10px;
+}
+
+.contact-flex input.email {
+     width: 250px;
+}
+
+.contact-flex input.submit {
+     width: 100px;
+}
+
+.social-flex {
+     display: flex
+     flex-wrap: wrap;
+     justify-content: flex-end;
+}
+
+.social-flex i {
+     margin: 0 20px;
+     color: #666666;
+     transition: all 0.5s;
+}
+
+.social-flex i:hover {
+     color: #BC85D6;
+}
+
+
+
+/*img.sprites {
+     width: 50%;
+}*/
